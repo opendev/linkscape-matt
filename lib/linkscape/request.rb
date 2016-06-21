@@ -65,17 +65,21 @@ module Linkscape
     def fetch(uri, limit = 10)
       # You should choose better exception.
       raise RecursionError, 'HTTP redirect too deep' if limit == 0
-      
+
       # Fetch with a POST of thers is a body
       response = if @body
         http = Net::HTTP.new(uri.host, uri.port)
         request = Net::HTTP::Post.new(uri.request_uri)
+        request.initialize_http_header({"User-Agent" => "MattBentley"})
         request.body = @body.to_json
         http.request(request)
       else
-        Net::HTTP.get_response(uri)
+        http = Net::HTTP.new(uri.host, uri.port)
+        request = Net::HTTP::Get.new(uri.request_uri)
+        request.initialize_http_header({"User-Agent" => "MattBentley"})
+        http.request(request)
       end
-      
+
       
 
       return fetch(response['location'], limit - 1) if Net::HTTPSuccess == response

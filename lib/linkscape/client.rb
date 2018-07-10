@@ -6,7 +6,7 @@ module Linkscape
       @secretKey = args.first ? args.shift : (options[:secret] || options[:secretKey] || options[:key])
       
       @options = {
-        :apiHost => 'lsapi-beta.seomoz.com',
+        :apiHost => 'lsapi.seomoz.com',
         :apiRoot => 'linkscape',
         :accessID => @accessID,
         :secretKey => @secretKey

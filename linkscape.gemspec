@@ -4,8 +4,8 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{linkscape}
-  s.version = "0.3.2"
+  s.name = %q{linkscape-matt}
+  s.version = "0.3.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Martin Tithonium", "Jeff Pollard", "Bryce Howard"]
@@ -37,7 +37,7 @@ Gem::Specification.new do |s|
     "rails/init.rb",
     "test.rb"
   ]
-  s.homepage = %q{http://github.com/seomoz/linkscape-gem}
+  s.homepage = %q{https://github.com/opendev/linkscape-matt}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}
   s.summary = %q{Provides an interface to the SEOmoz API}
